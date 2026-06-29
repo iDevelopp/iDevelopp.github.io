@@ -47,6 +47,7 @@ body {
     #0a1430 0%,
     var(--void) 58%
   );
+  background-color: var(--void);
   min-height: 100dvh;
   overflow-x: hidden;
 }
