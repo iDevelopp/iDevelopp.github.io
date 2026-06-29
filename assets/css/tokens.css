@@ -1,0 +1,40 @@
+/* ============================================================
+   TOKENS — design system custom properties
+   ============================================================ */
+
+:root {
+  /* ── Palette ── */
+  --void:    #03060f;
+  --ink:     #060b18;
+  --blue:    #3d8bff;
+  --blue-d:  #1b4fb0;
+  --cyan:    #7fe3ff;
+  --ice:     #cfe8ff;
+  --violet:  #8a9bf0;
+  --paper:   #e9f1fb;
+  --mist:    #7d8aa6;
+  --line:    rgba(207, 232, 255, 0.12);
+
+  /* ── Typography families ── */
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --body:    'IBM Plex Sans', system-ui, sans-serif;
+  --mono:    'IBM Plex Mono', ui-monospace, monospace;
+
+  /* ── Fluid type scale ── */
+  --fs-h1:  clamp(3.4rem,  13vw,  9rem);
+  --fs-h2:  clamp(1.8rem,   5vw,  3rem);
+  --fs-h3:  clamp(1.7rem, 4.2vw,  2.8rem);
+  --fs-xl:  clamp(2rem,    6vw,   4rem);
+  --fs-lg:  clamp(1.05rem, 2.1vw, 1.4rem);
+  --fs-md:  clamp(1rem,    1.6vw, 1.15rem);
+  --fs-sm:  clamp(0.85rem, 1.2vw, 0.95rem);
+  --fs-xs:  0.72rem;
+
+  /* ── Layout ── */
+  --maxw:      1180px;
+  --gutter:    clamp(1.25rem, 5vw, 3rem);
+  --section-y: clamp(6rem, 15vh, 11rem);
+
+  /* ── Motion ── */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

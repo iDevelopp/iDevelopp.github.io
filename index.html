@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivan Cros — Engineer & Creator</title>
+  <meta name="description" content="Ivan Cros — Computer Science Engineer. Code, 3D & systems. Building at the intersection of software and creation." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/pages/home.css" />
+</head>
+<body>
+
+<canvas id="cosmos"></canvas>
+<div class="holo-overlay"></div>
+<div id="progress"></div>
+
+<nav id="nav">
+  <div class="brand">Ivan <b>Cros</b></div>
+  <div class="nav-links" id="nav-links">
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow reveal-up in">Computer Science Engineer · Toulon</span>
+      <h1>
+        <span class="line"><span class="reveal"><span class="holo-text">Code,</span></span></span>
+        <span class="line"><span class="reveal"><span class="holo-text">3D & Systems.</span></span></span>
+        <span class="line"><span class="reveal">Built to last.</span></span>
+      </h1>
+      <p class="lead reveal-up">Software, simulation, and 3D worlds — I build where engineering meets creation.</p>
+      <div class="meta reveal-up d1">
+        <span><b>Java · Python · C++</b></span>
+        <span><b>3D · XR · ROS2</b></span>
+        <span><b>Amateur astronomer</b></span>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><span class="bar"></span></div>
+  </header>
+
+  <div class="panel">
+
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="wrap">
+      <p data-split>Engineer by training. <span class="hi">Creator by instinct.</span></p>
+    </div>
+  </section>
+
+  <!-- PROJECT TEASERS -->
+  <section class="teasers" id="work">
+    <div class="wrap">
+      <div class="section-head reveal-up">
+        <h2>Selected Work</h2>
+        <span class="count">03 — highlights</span>
+      </div>
+      <div id="teasers-mount" class="teasers-grid"></div>
+      <div class="teasers-cta reveal-up">
+        <a href="projects.html" class="btn btn--primary">View all projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal-up">
+        <span class="eyebrow">About</span>
+        <h2>Concrete engineer,<br>curious about the rest.</h2>
+        <p>Working towards an <strong>MEng in Computing Engineering</strong> at CNAM (work-study, CTI-accredited). I write clean code and think in images — I look for projects where both matter.</p>
+        <p>Currently working as a <strong>Software Designer</strong> — building libraries, Angular interfaces, and CI/CD pipelines. Last internship: <strong>3D & VR digitization</strong> of a Japanese temple for Kagami Tatami Co., Ltd.</p>
+      </div>
+      <div class="reveal-up d1">
+        <div class="skill-block">
+          <h4>Languages</h4>
+          <div class="row"><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>Kotlin</span><span>C# (Unity)</span><span>TypeScript</span><span>Bash</span><span>Assembly</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>Web & Data</h4>
+          <div class="row"><span>Angular</span><span>NodeJS</span><span>PostgreSQL</span><span>Docker</span><span>Mockoon</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>DevOps & Tools</h4>
+          <div class="row"><span>Git</span><span>GitLab CI</span><span>SonarQube</span><span>CI/CD</span><span>Linux</span><span>Cybersecurity</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>3D & XR</h4>
+          <div class="row"><span>Blender</span><span>Twinmotion</span><span>SketchUp</span><span>Unreal Engine</span><span>Unity</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>IoT & Embedded</h4>
+          <div class="row"><span>ESP32</span><span>Arduino</span><span>Raspberry Pi</span><span>Node-RED</span><span>Mosquitto</span><span>ROS2</span><span>Gazebo</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>Domains</h4>
+          <div class="row"><span>Signal Processing</span><span>Algorithms</span><span>Graph Theory</span><span>Compiler Design</span><span>Human-Computer Interaction</span><span>Project Management</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="reveal-up">
+        <h2>Let's build <span class="holo-text">together</span>.</h2>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/ivan-cros" target="_blank" rel="noopener" class="primary">LinkedIn</a>
+          <a href="https://github.com/iDevelopp" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Ivan Cros</span>
+      <span>Toulon · under the stars</span>
+    </div>
+  </footer>
+
+  </div>
+</div>
+
+<script type="module" src="assets/js/controllers/home.js"></script>
+</body>
+</html>

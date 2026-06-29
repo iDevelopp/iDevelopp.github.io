@@ -1,0 +1,64 @@
+/* ============================================================
+   PROJECTS PAGE — overrides and project-page-specific styles
+   ============================================================ */
+@import '../components.css';
+
+/* ── Shorter hero for the projects listing page ── */
+.projects-hero {
+  min-height: 60svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 6rem var(--gutter) 4rem;
+}
+
+.projects-hero h1 {
+  font-family: var(--display);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--ice);
+}
+
+.projects-hero .lead {
+  font-size: var(--fs-lg);
+  color: var(--paper);
+  max-width: 52ch;
+  margin-top: 1.25rem;
+}
+
+.projects-hero .meta {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--mist);
+  margin-top: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── Placeholder card inside .project-media ── */
+.project-media .ph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.project-media .ph svg {
+  stroke: var(--cyan);
+  opacity: 0.75;
+  fill: none;
+  width: 3rem;
+  height: 3rem;
+}
+
+.project-media .ph span {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  color: var(--mist);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}

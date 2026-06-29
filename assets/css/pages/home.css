@@ -1,0 +1,21 @@
+/* ============================================================
+   HOME PAGE — overrides and home-specific styles
+   ============================================================ */
+@import '../components.css';
+
+/* Manifesto strong / .hi → cyan accent */
+.manifesto p strong,
+.manifesto p .hi {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+/* Hero accent: blue is dominant on home */
+.hero h1 .accent {
+  color: var(--blue);
+}
+
+/* Projects section wrapper */
+.projects-section {
+  padding: var(--section-y) 0;
+}

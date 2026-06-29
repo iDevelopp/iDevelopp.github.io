@@ -1,0 +1,138 @@
+/* ============================================================
+   GALLERY PAGE — overrides and gallery-page-specific styles
+   ============================================================ */
+@import '../components.css';
+
+/* ── Short gallery hero (40svh) ── */
+.gallery-hero {
+  min-height: 40svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5rem var(--gutter) 3.5rem;
+}
+
+.gallery-hero h1 {
+  font-family: var(--display);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--ice);
+}
+
+.gallery-hero .lead {
+  font-size: var(--fs-lg);
+  color: var(--paper);
+  max-width: 52ch;
+  margin-top: 1.25rem;
+}
+
+/* ── Collection sections ── */
+.gallery-collections {
+  padding: var(--section-y) 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 10vh, 7rem);
+}
+
+.collection-head {
+  margin-bottom: 2rem;
+}
+
+.collection-head .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.collection-head h2 {
+  font-family: var(--display);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  color: var(--ice);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.collection-head .description {
+  color: var(--mist);
+  font-size: var(--fs-sm);
+  max-width: 58ch;
+  line-height: 1.7;
+}
+
+/* ── Gallery grid — editorial layout ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.75rem;
+}
+
+/* Default: 3 cols (span 4) */
+.gallery-item {
+  grid-column: span 4;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+/* Wide items: 6 cols */
+.gallery-item--wide {
+  grid-column: span 6;
+  aspect-ratio: 16 / 10;
+}
+
+/* Tall items: 3 cols, portrait */
+.gallery-item--tall {
+  grid-column: span 3;
+  aspect-ratio: 3 / 4;
+}
+
+/* First item of each section gets more weight */
+.gallery-item:first-child {
+  grid-column: span 8;
+  aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid { grid-template-columns: repeat(6, 1fr); }
+  .gallery-item { grid-column: span 3; }
+  .gallery-item--wide, .gallery-item:first-child { grid-column: span 6; }
+  .gallery-item--tall { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .gallery-item,
+  .gallery-item--wide,
+  .gallery-item--tall,
+  .gallery-item:first-child { grid-column: span 1; aspect-ratio: 4/3; }
+}
+
+/* ── Gallery items: pointer and caption overlay ── */
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.85rem 1rem;
+  background: rgba(6, 11, 24, 0.72);
+  backdrop-filter: blur(10px) saturate(1.3);
+  -webkit-backdrop-filter: blur(10px) saturate(1.3);
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ice);
+  letter-spacing: 0.06em;
+  transform: translateY(100%);
+  transition: transform 0.35s var(--ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
+}
+
+/* Ensure relative positioning for caption (reinforces base rule) */
+.gallery-item {
+  position: relative;
+}

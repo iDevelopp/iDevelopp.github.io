@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="7" fill="#060b18"/>
+  <!-- Orbital ring -->
+  <ellipse cx="16" cy="16" rx="13" ry="5" fill="none" stroke="#3d8bff" stroke-width="1.2" opacity="0.7" transform="rotate(-35 16 16)"/>
+  <!-- Electron dot -->
+  <circle cx="27" cy="11" r="2" fill="#7fe3ff"/>
+  <!-- IC letters -->
+  <text x="16" y="21" text-anchor="middle"
+    font-family="'Space Grotesk',system-ui,sans-serif"
+    font-size="14" font-weight="700"
+    fill="#cfe8ff" letter-spacing="-0.5">IC</text>
+</svg>

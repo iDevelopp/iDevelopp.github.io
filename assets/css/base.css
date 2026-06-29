@@ -1,0 +1,158 @@
+/* ============================================================
+   BASE — reset, body, layout primitives, global animations
+   ============================================================ */
+@import './tokens.css';
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── Body ── */
+body {
+  font-family: var(--body);
+  font-size: var(--fs-md);
+  line-height: 1.65;
+  color: var(--paper);
+  background: radial-gradient(
+    130% 90% at 50% -5%,
+    #0a1430 0%,
+    var(--void) 58%
+  );
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ── Star-field canvas ── */
+#cosmos {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Holographic scan-line overlay ── */
+.holo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      transparent,
+      transparent 2px,
+      rgba(127, 227, 255, 0.03) 2px,
+      rgba(127, 227, 255, 0.03) 4px
+    ),
+    radial-gradient(
+      ellipse 80% 70% at 50% 50%,
+      transparent 55%,
+      rgba(3, 6, 15, 0.75) 100%
+    );
+}
+
+/* ── Page layer (above canvas + overlay) ── */
+.page {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Reading-progress bar ── */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  z-index: 1000;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  box-shadow: 0 0 10px var(--cyan), 0 0 4px var(--blue);
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ── Centered container ── */
+.wrap {
+  width: min(var(--maxw), 100% - var(--gutter) * 2);
+  margin-inline: auto;
+}
+
+/* ── Eyebrow label ── */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--mist);
+}
+
+/* ── Reveal animation ── */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-up {
+  animation: revealUp 0.7s var(--ease) both;
+}
+
+.reveal-up[style*='--delay'] {
+  animation-delay: var(--delay, 0s);
+}
+
+/* ── Focus visible ── */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── Reduced-motion overrides ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .holo-overlay {
+    display: none;
+  }
+}
