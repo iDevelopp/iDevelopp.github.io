@@ -18,15 +18,15 @@ export const collections = [
     title: 'Under the Stars',
     description: 'Deep-sky observations captured with an eVscope 2. Amateur astronomy as rigorous observation.',
     items: [
-      { src: 'assets/media/astronomie/eVscope2-20250401-200245.PNG', caption: 'Deep sky — Apr 2025', wide: true },
-      { src: 'assets/media/astronomie/eVscope2-20250401-202251.PNG', caption: 'Deep sky — Apr 2025' },
-      { src: 'assets/media/astronomie/eVscope2-20250401-203631.PNG', caption: 'Deep sky — Apr 2025' },
-      { src: 'assets/media/astronomie/eVscope2-20250401-210005.PNG', caption: 'Deep sky — Apr 2025' },
-      { src: 'assets/media/astronomie/eVscope2-20250506-200430.PNG', caption: 'Deep sky — May 2025' },
-      { src: 'assets/media/astronomie/eVscope2-20250506-202055 2.PNG', caption: 'Deep sky — May 2025' },
-      { src: 'assets/media/astronomie/eVscope2-20250506-203803 2.PNG', caption: 'Deep sky — May 2025' },
-      { src: 'assets/media/astronomie/eVscope2-20250506-204648 2.PNG', caption: 'Deep sky — May 2025' },
-      { src: 'assets/media/astronomie/eVscope2-20250506-211545.PNG', caption: 'Deep sky — May 2025' }
+      { src: 'assets/media/astronomie/eVscope2-20250401-200245.jpg', caption: 'Deep sky — Apr 2025', wide: true },
+      { src: 'assets/media/astronomie/eVscope2-20250401-202251.jpg', caption: 'Deep sky — Apr 2025' },
+      { src: 'assets/media/astronomie/eVscope2-20250401-203631.jpg', caption: 'Deep sky — Apr 2025' },
+      { src: 'assets/media/astronomie/eVscope2-20250401-210005.jpg', caption: 'Deep sky — Apr 2025' },
+      { src: 'assets/media/astronomie/eVscope2-20250506-200430.jpg', caption: 'Deep sky — May 2025' },
+      { src: 'assets/media/astronomie/eVscope2-20250506-202055-2.jpg', caption: 'Deep sky — May 2025' },
+      { src: 'assets/media/astronomie/eVscope2-20250506-203803-2.jpg', caption: 'Deep sky — May 2025' },
+      { src: 'assets/media/astronomie/eVscope2-20250506-204648-2.jpg', caption: 'Deep sky — May 2025' },
+      { src: 'assets/media/astronomie/eVscope2-20250506-211545.jpg', caption: 'Deep sky — May 2025' }
     ]
   },
   {

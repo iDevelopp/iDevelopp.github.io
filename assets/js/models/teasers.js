@@ -14,10 +14,10 @@ export const teasers = [
     image: ''
   },
   {
-    tag: 'Multimedia',
-    title: 'Immersive Japan',
-    description: 'XR performance at Cannes — where Japanese craft meets digital storytelling.',
-    href: 'projects.html#immersive-japan',
-    image: 'assets/media/japon/IMG_0235.jpeg'
+    tag: 'AI · Python',
+    title: 'Shape Classifier',
+    description: 'Classifier of 6 noisy shapes using entropy and Kullback-Leibler divergence.',
+    href: 'projects.html#classifier',
+    image: ''
   }
 ];

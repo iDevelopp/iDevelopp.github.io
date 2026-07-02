@@ -200,6 +200,78 @@ export function initLightbox(gridSelector) {
   });
 }
 
+export function initAboutRocket(triggerSelector) {
+  var el = document.querySelector(triggerSelector);
+  if (!el) return;
+  var fired = false;
+
+  function fireRocket() {
+    var r = document.createElement('div');
+    r.className = 'rocket-shot';
+    r.innerHTML =
+      '<svg width="44" height="20" viewBox="0 0 44 20" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+        '<path d="M42 10 L28 2 L22 10 L28 18 Z" fill="#cfe8ff"/>' +
+        '<circle cx="33" cy="10" r="3.5" fill="#7fe3ff"/>' +
+        '<path d="M22 7.5 L8 10 L22 12.5 Z" fill="url(#rf)"/>' +
+        '<defs><linearGradient id="rf" x1="22" y1="10" x2="8" y2="10" gradientUnits="userSpaceOnUse">' +
+          '<stop offset="0" stop-color="#7fe3ff" stop-opacity="1"/>' +
+          '<stop offset="1" stop-color="#3d8bff" stop-opacity="0"/>' +
+        '</linearGradient></defs>' +
+      '</svg>';
+    document.body.appendChild(r);
+    r.addEventListener('animationend', function() { r.remove(); });
+  }
+
+  function check() {
+    if (fired) return;
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.9) {
+      fired = true;
+      window.removeEventListener('scroll', check);
+      fireRocket();
+    }
+  }
+
+  window.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('load', check);
+}
+
+export function initAboutHeadline(selector) {
+  var el = document.querySelector(selector);
+  if (!el) return;
+
+  // Split into word spans, preserving <br>
+  var html = el.innerHTML;
+  var parts = html.split(/(<br\s*\/?>)/gi);
+  el.innerHTML = parts.map(function(part) {
+    if (/^<br/i.test(part)) return part;
+    return part.split(/(\s+)/).map(function(token) {
+      if (/^\s+$/.test(token) || !token) return token;
+      return '<span class="about-word">' + token + '</span>';
+    }).join('');
+  }).join('');
+
+  var words = el.querySelectorAll('.about-word');
+  words.forEach(function(w, i) {
+    w.style.transitionDelay = (i * 0.08) + 's';
+  });
+
+  var fired = false;
+  function trigger() {
+    if (fired) return;
+    fired = true;
+    window.removeEventListener('scroll', onScroll);
+    words.forEach(function(w) { w.classList.add('in'); });
+  }
+  function onScroll() {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.9) trigger();
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('load', onScroll);
+}
+
 export function setYear(id) {
   var el = document.getElementById(id);
   if (el) el.textContent = new Date().getFullYear();
